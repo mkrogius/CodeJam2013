@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="TodoModule">
+  <head>
+    <title><%=title%></title>
+    
+    <%-scripts%>
+    <%-stylesheets%>
+    
+    <% script("/javascripts/vendor/jquery/jquery.js") %>
+    <% script("/javascripts/vendor/angular/angular.js") %>
+    <% script("/javascripts/vendor/angular-bootstrap/ui-bootstrap-tpls.js") %>
+    <% script("/javascripts/vendor/bootstrap-javascript/bootstrap.js") %>
+    
+    <% script("/javascripts/TodoModule.js") %>
+    <% script("/javascripts/controllers/TodoListController.js") -%>
+    
+    
+    <% stylesheet("/javascripts/vendor/bootstrap-css/css/bootstrap.css") %>
+    <% stylesheet("/javascripts/vendor/bootstrap-css/css/bootstrap-theme.css") %>
+
+  </head>
+  <body>
+    <%- body %>
+  </body>
+</html>

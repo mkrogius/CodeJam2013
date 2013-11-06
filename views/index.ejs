@@ -1,0 +1,28 @@
+<% layout("layout") -%>
+
+
+<div ng-controller="TodoListController" ng-init="setTodos(<%=JSON.stringify(todos)%>)">
+    <h1>My Todo List</h1>
+    <h2>Add New</h2>
+    <form ng-submit="addNewTodo()">
+      <input type="text" ng-model="newTodo.description" placeholder="Description"><br>
+      <input type="text" datepicker-popup="dd-MMMM-yyyy" ng-model="newTodo.due" is-open="opened" ng-required="true" show-weeks="false"/><br>
+      <input type="submit" value="Add Todo">
+    </form>
+    <h2>Upcoming</h2>
+      <div class="todo not-done" ng-repeat="todo in todos | filter:notDoneFilter">
+        <input type="checkbox" ng-model="todo.done" ng-change="update(todo)">
+        {{todo.description}}
+        <div \>
+          {{todo.due | date:'MMM d, yyyy'}}
+        </div>
+      </div>
+    <h2>Done</h2>
+      <div class="todo done" ng-repeat="todo in todos | filter:doneFilter">
+        <input type="checkbox", ng-model="todo.done" ng-change="update(todo)">
+        <del>{{todo.description}}</del>
+        <div >
+          {{todo.due | date:'MMM d, yyyy'}}
+        </div>
+      </div>
+</div>
