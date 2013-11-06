@@ -6,7 +6,7 @@
 var express = require('express');
 var engine = require('ejs-locals');
 var routes = require('./routes');
-var user = require('./routes/user');
+routes.graph = require('./routes/graph').graph;
 var http = require('http');
 var path = require('path');
 var Mongoose = require('mongoose');
@@ -36,6 +36,8 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index(Todo));
+app.get('/graph', routes.graph);
+app.get('/graphUpdate', routes.graphUpdate);
 app.post('/todo.json', routes.addTodo(Todo));
 app.put('/todo/:id.json', routes.update(Todo));
 
