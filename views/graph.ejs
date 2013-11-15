@@ -1,8 +1,4 @@
 <% layout('layout') %>
-<% script('javascripts/vendor/d3/d3.min.js') %>
-<% script('javascripts/vendor/nvd3/nv.d3.min.js') %>
-<% stylesheet("javascripts/vendor/nvd3/nv.d3.min.css") %>
-<% script('/javascripts/graph.js') %>
-<div id="graph">
-  <svg height="400px"></svg>
-</div>
+<script type="text/javascript" src="/javascripts/vendor/flot/jquery.flot.js"></script>
+<script type="text/javascript" src='/javascripts/graph.js'></script>
+<div id="graph" style="width:600px;height:300px"></div>
